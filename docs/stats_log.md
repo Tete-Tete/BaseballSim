@@ -1,13 +1,26 @@
 # Status Log – MLB Simulation Project
 
-This document chronologically records key project updates, decisions, and progress milestones.
+### Iteration 1 (2025-05-18)
 
-| Date       | Team Member     | Update Description                                                              |
-| ---------- | --------------- | ------------------------------------------------------------------------------- |
-| 2025-05-18 | Chris (Dev Lead) | Initialized simulation project structure and confirmed model requirements.      |
-| 2025-05-18 | Kevin            | Implemented Level 1 and Level 2 simulation logic using real player averages.    |
-| 2025-05-18 | ChatGPT (AI)    | Helped design project structure and provided functional specs + WBS.            |
-| 2025-05-19 | Yate            | Finalized Level 3 model with pitcher adjustment and base runner logic.          |
-| 2025-05-19 | ChatGPT (AI)    | Generated markdown-based Product Backlog, revised WBS formatting to match spec. |
-| 2025-05-19 | Chris           | Collected and exported real MLB batting/pitching stats to CSV.                  |
-| 2025-05-19 | Kevin + ChatGPT  | Prepared Status Log, ready to proceed to Activity List and Roadmap.             |
+**Summary of Work Performed:**
+
+* Reviewed functional specs and initialized GitHub folder structure.
+* Created structured WBS in both table and tree formats.
+* Implemented simulation logic for Level 1 and Level 2 models using batting averages.
+* Developed Level 3 simulation incorporating pitcher ERA and hit type logic.
+* Collected real-world batting and pitching data for Cubs and White Sox.
+* Generated CSV datasets and verified formatting.
+* Completed Product Backlog table with personas and priorities.
+* Created and documented all required project management artifacts.
+
+**Ideas/Notes:**
+
+* Consistent use of markdown tables and headings improves readability.
+* Clear ID linking across backlog, activity, and roadmap supports traceability.
+* AI assistance reduced formatting and writing overhead.
+
+**Plan for Next Iteration:**
+
+* Complete results visualization (score histograms, win rate charts).
+* Finalize README with setup instructions and credits.
+* Internal peer review and final polish for GitHub repo before submission.
