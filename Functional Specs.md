@@ -26,21 +26,21 @@ This project uses Monte Carlo simulation techniques to model baseball game outco
 
 ## Functional Requirements
 
-* [ ] Code for each model level must be contained in `functional_code/` and callable with parameters
-* [ ] Models must support running multiple simulations (e.g., 1000 games)
-* [ ] Use real batting average (BA) and ERA data from the most recent season
-* [ ] Save results (average score, win rate) to `results/`
-* [ ] Log AI-assisted contributions in documentation
+*  Code for each model level must be contained in `functional_code/` and callable with parameters
+*  Models must support running multiple simulations (e.g., 1000 games)
+*  Use real batting average (BA) and ERA data from the most recent season
+*  Save results (average score, win rate) to `results/`
+*  Log AI-assisted contributions in documentation
 
 ## Non-functional Requirements
 
-* [ ] Code should be written in clean Python with comments
-* [ ] Outputs must be reproducible with a fixed seed
-* [ ] Simulation runtime for each model should complete within 1 minute for 1000 games
+*  Code should be written in clean Python with comments
+*  Outputs must be reproducible with a fixed seed
+*  Simulation runtime for each model should complete within 1 minute for 1000 games
 
 ## Acceptance Criteria
 
-* ✔ Three simulation models are implemented and tested
-* ✔ Real-world 2025 data is used in each model
-* ✔ Results are saved and compared in plots or tables
-* ✔ All documentation artifacts are complete and committed to GitHub
+* Three simulation models are implemented and tested
+* Real-world 2025 data is used in each model
+* Results are saved and compared in plots or tables
+* All documentation artifacts are complete and committed to GitHub
