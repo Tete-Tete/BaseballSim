@@ -1,0 +1,78 @@
+import random
+
+def simulate_simple_game(hit_prob, innings=9):
+    total_runs = 0
+    for _ in range(innings):
+        outs = 0
+        while outs < 3:
+            if random.random() < hit_prob:
+                total_runs += 1
+            else:
+                outs += 1
+    return total_runs
+
+# Simulate one game
+cubs_score = simulate_simple_game(0.254)
+white_sox_score = simulate_simple_game(0.217)
+
+print(f"Cubs Score: {cubs_score}")
+print(f"White Sox Score: {white_sox_score}")
+
+# Cubs players (2025 estimated BA)
+cubs_batting_order = [0.290, 0.264, 0.253, 0.243, 0.290]
+
+# White Sox players
+white_sox_batting_order = [0.265, 0.250, 0.240, 0.230, 0.220]
+
+def simulate_medium_game(batting_order, innings=9):
+    score = 0
+    batter_index = 0
+    for _ in range(innings):
+        outs = 0
+        while outs < 3:
+            batter_avg = batting_order[batter_index % len(batting_order)]
+            if random.random() < batter_avg:
+                score += 1
+            else:
+                outs += 1
+            batter_index += 1
+    return score
+
+# Simulate one game
+cubs_score = simulate_medium_game(cubs_batting_order)
+white_sox_score = simulate_medium_game(white_sox_batting_order)
+
+print(f"Cubs Score: {cubs_score}")
+print(f"White Sox Score: {white_sox_score}")
+
+def simulate_detailed_game(batting_order, pitcher_era, league_era=4.00, innings=9):
+    score = 0
+    batter_index = 0
+    for _ in range(innings):
+        outs = 0
+        bases = [0, 0, 0]  # [1st, 2nd, 3rd]
+        while outs < 3:
+            batter_avg = batting_order[batter_index % len(batting_order)]
+            adjusted_avg = batter_avg * (league_era / pitcher_era)
+            if random.random() < adjusted_avg:
+                hit_type = random.choices(['1B', '2B', 'HR'], weights=[0.7, 0.2, 0.1])[0]
+                if hit_type == '1B':
+                    score += bases[2]
+                    bases = [1] + bases[:2]
+                elif hit_type == '2B':
+                    score += bases[2] + bases[1]
+                    bases = [0, 1, bases[0]]
+                elif hit_type == 'HR':
+                    score += sum(bases) + 1
+                    bases = [0, 0, 0]
+            else:
+                outs += 1
+            batter_index += 1
+    return score
+
+# Simulate one game with real player stats and ERA adjustment
+cubs_score = simulate_detailed_game(cubs_batting_order, pitcher_era=4.23)
+white_sox_score = simulate_detailed_game(white_sox_batting_order, pitcher_era=3.93)
+
+print(f"Cubs Score: {cubs_score}")
+print(f"White Sox Score: {white_sox_score}")
