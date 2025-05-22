@@ -24,3 +24,5 @@
 └── 4 AI Collaboration
 ├── 4.1 Logging AI Contributions
 └── 4.2 Reproducibility and Reflection
+
+**Author**
